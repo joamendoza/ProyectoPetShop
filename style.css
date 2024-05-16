@@ -1,0 +1,134 @@
+body{
+    background-color: #026de6;
+}
+
+#navBar{
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#textoNav{
+  font-size: 150%;
+}
+
+#botonCartas{
+  max-width: 100%;
+}
+
+#contenedorCarrusel{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#botonCarrito{
+  margin-left: 1%;
+  border-color: lightgray;
+}
+
+#iconoCarrito {
+  text-decoration: none;
+}
+
+#botonBuscar{
+  border-color: lightgray;
+}
+
+#iconoBuscar {
+  width: 20px;
+  height: 20px;
+  background: url('img/lupa.png');
+  background-size: cover;
+
+}
+
+#botonBuscar:hover #iconoBuscar {
+  background: url('img/lupa2.png');
+  background-size: 20px;
+}
+
+#tituloMasVendidos{
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#fondoRedesSociales{
+  background-color: #31363F;
+  font-size: 12px;
+}
+#iconosSociales{
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
+#contenedorRedes{
+  color:aliceblue;
+}
+
+#footer{
+  background-color:#31363F;
+  color: aliceblue;
+  position: relative;
+  margin-bottom: 0px;
+}
+#textoFooter{
+  text-align: center;
+}
+
+
+#botonImagenDonacion{
+  padding: 0; /* Eliminar el relleno del botón */
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+
+  .carousel-item .d-flex{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Modificar donde y como aparacerá el mensaje cuando no haya nada en el carrito*/
+#empty-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  text-align: center; 
+}
+#empty-message button {
+  margin-top: 20px;
+}
+
+#containerParametros{
+  max-width: 80%;
+  font-size: 140%;
+  margin-top: 1%;
+  top: 1%;
+  background-color: aliceblue;
+  border-style: solid;
+  border-color: #0B2447;
+  border-width: 1px;
+}
+
+#contenedorProducto{
+  margin-top: 30px;
+  max-width: 80%;
+  text-align: center;
+  padding: 1%;
+}
+
+.dropdown-menu{
+  z-index: 1050;
+}
+
+.custom-card{
+  margin-bottom: 20px;
+}
+
+#botonImagen{
+  margin: 0;
+  padding: 0;
+}
