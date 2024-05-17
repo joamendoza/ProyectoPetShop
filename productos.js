@@ -116,10 +116,12 @@ function obtenerCarrito() {
     return localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
 }
 
-function actualizarBadge() { //Funcion que actualiza el badge
+function actualizarBadge() {
     const carrito = obtenerCarrito();
-    const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
-    badgeElement.textContent = totalItems;
+    const cantidadProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+    badgeElement.textContent = cantidadProductos;
+    // Guardar la cantidad de productos en el carrito en localStorage
+    localStorage.setItem('cantidadProductos', cantidadProductos);
 }
 
 });

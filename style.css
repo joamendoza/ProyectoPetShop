@@ -132,3 +132,9 @@ body{
   margin: 0;
   padding: 0;
 }
+
+#contenidoParticipa{
+  background-color: rgba(128, 128, 128, 0.7);
+  padding: 3%;
+  border-radius: 10px;
+}

@@ -18,7 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (carrito.length === 0) {
             // Modificar mensaje en que caso de que no hayan elementos agregados al carrito
+            emptyMessage.style.borderRadius = '10px';
+            emptyMessage.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
+            emptyMessage.style.paddingTop = '3.3%';
             emptyMessage.style.display = 'block';
+            emptyMessage.style.fontWeight = 'bold';
             emptyMessage.innerHTML = `
                 <h1>🛒</h1>
                 <p>¡Empieza un carrito de compras!</p>
@@ -33,13 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function actualizarBadge() { // Función para actualizar el badge con los elementos del carrito (cantidad)
+    function actualizarBadge() {
         const carrito = obtenerCarrito();
         const cantidadProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
         badgeElement.textContent = cantidadProductos;
         // Guardar la cantidad de productos en el carrito en localStorage
         localStorage.setItem('cantidadProductos', cantidadProductos);
-    }    
+    }
+        
     
 
     // Función para formatear el precio en pesos chilenos (CLP)
