@@ -43,7 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function actualizarBadge() {
         const carrito = obtenerCarrito();
         const cantidadProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
-        badgeElement.textContent = cantidadProductos;
+        
+        if (cantidadProductos === 0) {
+            // Si la cantidad de productos es 0, oculta la insignia
+            badgeElement.style.display = 'none';
+        } else {
+            // Si hay productos en el carrito, muestra la cantidad y la insignia
+            badgeElement.textContent = cantidadProductos;
+            badgeElement.style.display = 'block'; // Asegúrate de que la insignia esté visible
+        }
+        
         // Guardar la cantidad de productos en el carrito en localStorage
         localStorage.setItem('cantidadProductos', cantidadProductos);
     }

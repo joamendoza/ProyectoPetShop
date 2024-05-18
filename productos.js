@@ -90,6 +90,8 @@ productosContainer.addEventListener('click', event => {
     const precio = parseFloat(button.dataset.precio);
 
     agregarProductoAlCarrito(id, nombre, precio);
+    // Iniciar animación
+    iniciarAnimacionProducto(button);
     }
 });
 
@@ -112,6 +114,7 @@ function agregarProductoAlCarrito(id, nombre, precio) {
     actualizarBadge();      // Actualiza el badge
 }
 
+
 function obtenerCarrito() {
     return localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
 }
@@ -119,9 +122,54 @@ function obtenerCarrito() {
 function actualizarBadge() {
     const carrito = obtenerCarrito();
     const cantidadProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
-    badgeElement.textContent = cantidadProductos;
+    
+    if (cantidadProductos === 0) {
+        // Si la cantidad de productos es 0, oculta la insignia
+        badgeElement.style.display = 'none';
+    } else {
+        // Si hay productos en el carrito, muestra la cantidad y la insignia
+        badgeElement.textContent = cantidadProductos;
+        badgeElement.style.display = 'block'; // Asegúrate de que la insignia esté visible
+    }
+    
     // Guardar la cantidad de productos en el carrito en localStorage
     localStorage.setItem('cantidadProductos', cantidadProductos);
 }
+
+function iniciarAnimacionProducto(button) {
+    const cart = $('#botonCarrito');
+    const imgtodrag = $(button).closest('.card').find("img").eq(0);
+
+    if (imgtodrag.length) {
+        // Calcular la posición del centro de la imagen
+        const imgCenterTop = imgtodrag.offset().top + imgtodrag.height() / 2;
+        const imgCenterLeft = imgtodrag.offset().left + imgtodrag.width() / 2;
+
+        const imgclone = imgtodrag.clone()
+            .css({
+                'opacity': '0.5',
+                'position': 'absolute',
+                'height': '150px',
+                'width': '150px',
+                'z-index': '100',
+                'top': imgCenterTop - 75, // Ajustar para centrar la imagen clonada
+                'left': imgCenterLeft - 75 // Ajustar para centrar la imagen clonada
+            })
+            .appendTo($('body'))
+            .animate({
+                'top': cart.offset().top + 10,
+                'left': cart.offset().left + 10,
+                'width': 75,
+                'height': 75
+            }, 1000, 'easeInOutExpo');
+
+        imgclone.animate({
+            'width': 0,
+            'height': 0
+        }, function () {
+            $(this).detach();
+        });
+    }
+}    
 
 });

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- IMPORTACIÓN BOOTSTRAP Y HOJA DE ESTILOS -->
@@ -12,131 +13,123 @@
     crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css">
+    <!-- Funciones JS -->
+    <script src="funciones.js"></script>
 </head>
 <body>
     <!-- COMIENZO REDES SOCIALES -->
     <div id="fondoRedesSociales" class="container-fluid">
-        <ul class="nav justify-content-center">
+      <ul class="nav justify-content-center">
         <li class="nav-item">
-            <a
+          <a
             id="contenedorRedes"
             class="nav-link active"
             aria-current="page"
-            href="#"
+            href="https://web.facebook.com/reel/322317047490245/" target="_blank"
             ><img
-                id="iconosSociales"
-                src="img/facebook.png"
-                alt=""
-                width="15"
+              id="iconosSociales"
+              src="img/facebook.png"
+              alt=""
+              width="15"
             />Facebook</a
-            >
+          >
         </li>
         <li class="nav-item">
-            <a id="contenedorRedes" class="nav-link" href="#"
+          <a id="contenedorRedes" class="nav-link" href="https://www.instagram.com/p/CpIu34yLTFf/?hl=es-la" target="_blank"
             ><img
-                id="iconosSociales"
-                src="img/instagram.png"
-                alt=""
-                width="15"
+              id="iconosSociales"
+              src="img/instagram.png"
+              alt=""
+              width="15"
             />Instagram</a
-            >
+          >
         </li>
         <li class="nav-item">
-            <a id="contenedorRedes" class="nav-link" href="#"
+          <a id="contenedorRedes" class="nav-link" href="https://www.tiktok.com/@f_por_el_bicho_4/video/7177571008168217861" target="_blank"
             ><img
-                id="iconosSociales"
-                src="img/tiktok.png"
-                alt=""
-                width="15"
+              id="iconosSociales"
+              src="img/tiktok.png"
+              alt=""
+              width="15"
             />Tik-Tok</a
-            >
+          >
         </li>
         <li class="nav-item">
-            <a id="contenedorRedes" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+          <a id="contenedorRedes" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
             ><img
-                id="iconosSociales"
-                src="img/youtube.png"
-                alt=""
-                width="15"
+              id="iconosSociales"
+              src="img/youtube.png"
+              alt=""
+              width="15"
             />YouTube</a
-            >
+          >
         </li>
-        </ul>
+      </ul>
     </div>
     <!-- FIN REDES SOCIALES -->
 
     <!-- INICIO NAVBAR -->
     <nav id="navBar" class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="img/icon.png" alt="logo" width="120" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul id="textoNav" class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="ubicacion.html" id="navUbicacionTxt">Ubicación</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="navNosotrosTxt">Nosotros</a>
-              </li>
-              <a class="nav-link" href="participa.html" id="navParticipaTxt">Participa</a>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  id="navProductosTxt"
-                >
-                  Productos
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="bandanas.html">Bandanas</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="correas.html">Correas</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Identificaciones</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li><a class="dropdown-item" href="#">Juguetes</a></li>
-                </ul>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar..."
-                aria-label="Search"
-                id="barraBusqueda"
-              />
-              <button
-                id="botonBuscar"
-                class="btn btn-outline-primary"
-                type="submit"
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/icon.png" alt="logo" width="120" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="textoNav" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="ubicacion.html" id="navUbicacionTxt">Ubicación</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="navNosotrosTxt">Nosotros</a>
+            </li>
+            <a class="nav-link" href="participa.html" id="navParticipaTxt">Participa</a>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="navProductosTxt"
               >
-                <div id="iconoBuscar"></div>
-              </button>
-            </form>
-            <button type="button" id="botonCarrito" class="btn btn-outline-primary">
-              <a id="iconoCarrito" href="carrito.html">🛒
-                <span id="badge" class="badge rounded-pill bg-danger">0</span>
+                Productos
               </a>
-            </button>
-          </div>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="bandanas.html">Bandanas</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="correas.html">Correas</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Identificaciones</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Juguetes</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <div class="input-group">
+              <input id="barraBusqueda" type="text" class="form-control" placeholder="Busca tu producto!" aria-label="Buscar" aria-describedby="botonBuscar">
+              <button class="btn btn-outline-secondary" type="button" id="botonBuscar"><span id="iconoBuscar"></span></button>
+            </div>            
+          </form>                  
+          <button type="button" id="botonCarrito" class="btn btn-outline-primary">
+            <a id="iconoCarrito" href="carrito.html">
+              <span id="badge" class="badge rounded-pill bg-danger">0</span>
+            </a>
+          </button>
         </div>
-      </nav>
+      </div>
+    </nav>
     <!-- FIN NAVBAR -->
 
     <!-- INICIO CONTENIDO PÁGINA -->
@@ -148,7 +141,7 @@
             <!-- Input Group para Nombre de usuario -->
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Nombre de usuario</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="usernameInput" required>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="usernameInput" placeholder="(min. 5 caracteres)" required>
             </div>
     
             <!-- Input Group para Correo Electrónico -->
@@ -159,9 +152,10 @@
     
             <!-- Input Group para Fecha de nacimiento -->
             <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
-                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="birthdateInput" required>
-            </div>
+              <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
+              <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="birthdateInput" required>
+          </div>
+          
     
             <!-- Botón de Registro -->
             <button type="submit" class="btn btn-primary">REGISTRAR</button>
@@ -188,75 +182,93 @@
         </div>
     </div>
 
+    <script>
+      valorBadgeCarrito();
+    </script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Obtener el formulario de registro y sus campos de entrada
-            const $registroForm = $('#registroForm');
-            const $usernameInput = $('#usernameInput');
-            const $emailInput = $('#emailInput');
-            const $birthdateInput = $('#birthdateInput');
+      $(document).ready(function () {
+          // Obtener el formulario de registro y sus campos de entrada
+          const $registroForm = $('#registroForm');
+          const $usernameInput = $('#usernameInput');
+          const $emailInput = $('#emailInput');
+          const $birthdateInput = $('#birthdateInput');
+          function setMaxDate() {
+            // Obtener la fecha actual
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0!
+            var yyyy = today.getFullYear();
+            today = yyyy + '-' + mm + '-' + dd;
+            
+            // Establecer el atributo max del campo de fecha como la fecha actual
+            document.getElementById("birthdateInput").setAttribute("max", today);
+          }
+
+          // Agregar un evento de escucha para el evento submit del formulario
+          $registroForm.on('submit', function (event) {
+              // Prevenir el comportamiento predeterminado del formulario (enviar datos)
+              event.preventDefault();
     
-            // Función para actualizar la cantidad de productos en la insignia
-            function actualizarCantidadProductos() {
-                const cantidadProductos = localStorage.getItem('cantidadProductos') || 0;
-                $('#badge').text(cantidadProductos);
-            }
+              // Validar los campos de entrada
+              let isValid = true;
     
-            // Actualizar la cantidad de productos al cargar la página
-            actualizarCantidadProductos();
+              // Validar Nombre de usuario
+              if ($usernameInput.val().trim() === '' || $usernameInput.val().trim().length < 5) {	
+                  isValid = false;
+                  alert('Por favor, ingrese un nombre de usuario\n(min. 5 caracteres).');
+              }
+              
+              // Validar Correo Electrónico
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test($emailInput.val().trim())) {
+                  isValid = false;
+                  alert('Por favor, ingrese un correo electrónico válido.');
+              }
     
-            // Agregar un evento de escucha para el evento submit del formulario
-            $registroForm.on('submit', function (event) {
-                // Prevenir el comportamiento predeterminado del formulario (enviar datos)
-                event.preventDefault();
+              // Validar Fecha de nacimiento y edad
+              const birthdate = new Date($birthdateInput.val());
+              const today = new Date();
+              const age = today.getFullYear() - birthdate.getFullYear();
+              const month = today.getMonth() - birthdate.getMonth();
+              if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+                  age--;
+              }
+
+              if (age < 5 || age > 130) {
+                  isValid = false;
+                  if (age < 5) {
+                      alert('La edad debe ser mayor o igual a 5 años.');
+                  } else if (age > 130) {
+                      alert('La edad no puede exceder los 130 años.');
+                  }
+              }
+
     
-                // Validar los campos de entrada
-                let isValid = true;
-                
-                // Validar Nombre de usuario
-                if ($usernameInput.val().trim() === '') {
-                    isValid = false;
-                    alert('Por favor, ingrese un nombre de usuario.');
-                }
+              if (isValid) {
+                  // Mostrar el modal de registro exitoso
+                  const registroExitosoModal = new bootstrap.Modal($('#registroExitosoModal'));
+                  registroExitosoModal.show();
     
-                // Validar Correo Electrónico
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test($emailInput.val().trim())) {
-                    isValid = false;
-                    alert('Por favor, ingrese un correo electrónico válido.');
-                }
-    
-                // Validar Fecha de nacimiento
-                if ($birthdateInput.val().trim() === '') {
-                    isValid = false;
-                    alert('Por favor, ingrese su fecha de nacimiento.');
-                }
-    
-                if (isValid) {
-                    // Incrementar la cantidad de productos en el LocalStorage
-                    let cantidadProductos = parseInt(localStorage.getItem('cantidadProductos') || 0);
-                    cantidadProductos++;
-                    localStorage.setItem('cantidadProductos', cantidadProductos);
-    
-                    // Mostrar el modal de registro exitoso
-                    const registroExitosoModal = new bootstrap.Modal($('#registroExitosoModal'));
-                    registroExitosoModal.show();
-    
-                    // Limpiar los campos de texto después de que se muestre el modal
-                    registroExitosoModal._element.addEventListener('hidden.bs.modal', function () {
-                        // Limpiar los campos de texto
-                        $usernameInput.val('');
-                        $emailInput.val('');
-                        $birthdateInput.val('');
-                    });
-                }
-            });
-        });
+                  // Limpiar los campos de texto después de que se muestre el modal
+                  registroExitosoModal._element.addEventListener('hidden.bs.modal', function () {
+                      // Limpiar los campos de texto
+                      $usernameInput.val('');
+                      $emailInput.val('');
+                      $birthdateInput.val('');
+                  });
+              }
+          });
+          window.onload = setMaxDate();
+      });
+
     </script>
+    
+  
+  
     
     
     <!-- FIN CONTENIDO PÁGINA -->

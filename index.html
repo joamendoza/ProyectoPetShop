@@ -11,7 +11,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" /> 
   </head>
   <body>
     <!-- COMIENZO REDES SOCIALES -->
@@ -22,7 +22,7 @@
             id="contenedorRedes"
             class="nav-link active"
             aria-current="page"
-            href="#"
+            href="https://web.facebook.com/reel/322317047490245/" target="_blank"
             ><img
               id="iconosSociales"
               src="img/facebook.png"
@@ -32,7 +32,7 @@
           >
         </li>
         <li class="nav-item">
-          <a id="contenedorRedes" class="nav-link" href="#"
+          <a id="contenedorRedes" class="nav-link" href="https://www.instagram.com/p/CpIu34yLTFf/?hl=es-la" target="_blank"
             ><img
               id="iconosSociales"
               src="img/instagram.png"
@@ -42,7 +42,7 @@
           >
         </li>
         <li class="nav-item">
-          <a id="contenedorRedes" class="nav-link" href="#"
+          <a id="contenedorRedes" class="nav-link" href="https://www.tiktok.com/@f_por_el_bicho_4/video/7177571008168217861" target="_blank"
             ><img
               id="iconosSociales"
               src="img/tiktok.png"
@@ -114,23 +114,14 @@
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Buscar..."
-              aria-label="Search"
-              id="barraBusqueda"
-            />
-            <button
-              id="botonBuscar"
-              class="btn btn-outline-primary"
-              type="submit"
-            >
-              <div id="iconoBuscar"></div>
-            </button>
-          </form>
+            <div class="input-group">
+              <input id="barraBusqueda" type="text" class="form-control" placeholder="Busca tu producto!" aria-label="Buscar" aria-describedby="botonBuscar">
+              <button class="btn btn-outline-secondary" type="button" id="botonBuscar"><span id="iconoBuscar"></span></button>
+            </div>
+            <div id="resultadosBusqueda" class="dropdown-menu" aria-labelledby="barraBusqueda"></div>      
+          </form>                  
           <button type="button" id="botonCarrito" class="btn btn-outline-primary">
-            <a id="iconoCarrito" href="carrito.html">🛒
+            <a id="iconoCarrito" href="carrito.html">
               <span id="badge" class="badge rounded-pill bg-danger">0</span>
             </a>
           </button>
@@ -170,47 +161,29 @@
     </div>
     <!-- FIN CARRUSEL -->
 
-    <!-- COMIENZO CARTAS -->
+ <!-- COMIENZO CARTAS -->
     <div id="contenedorCartas" class="container-fluid">
       <div class="row">
-        <div
-          id="tituloMasVendidos"
-          class="col-12 d-flex justify-content-center"
-        >
-            <p>🔥 PRODUCTOS MÁS POPULARES 🔥</p>
+        <div id="tituloMasVendidos" class="col-12 d-flex justify-content-center">
+          <p>🔥 PRODUCTOS MÁS POPULARES 🔥</p>
         </div>
         <div class="container-fluid" id="productos-container">
           <div id="carouselExample" class="carousel slide">
             <!-- Aquí será llenado dinámicamente por JavaScript -->
 
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-disabled="true"
-              ></span>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
         </div>
       </div>
     </div>
+
     <!-- FIN DE LAS CARTAS -->
 
     <!-- COMIENZO DONACIONES -->
@@ -284,6 +257,9 @@
     </div>
 
     <!-- importaciones de código -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI (For effects like shake) -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="productos.js"></script>
     
     <script
