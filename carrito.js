@@ -18,10 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (carrito.length === 0) {
             // Modificar mensaje en que caso de que no hayan elementos agregados al carrito
+
             emptyMessage.style.borderRadius = '10px';
-            emptyMessage.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
-            emptyMessage.style.paddingTop = '3.3%';
+            //emptyMessage.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
+            //emptyMessage.style.paddingTop = '3.3%';
             emptyMessage.style.display = 'block';
+            
+
             emptyMessage.style.fontWeight = 'bold';
             emptyMessage.innerHTML = `
                 <h1>🛒</h1>

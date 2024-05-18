@@ -52,7 +52,7 @@
                 >
             </li>
             <li class="nav-item">
-                <a id="contenedorRedes" class="nav-link" href="#"
+                <a id="contenedorRedes" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
                 ><img
                     id="iconosSociales"
                     src="img/youtube.png"
@@ -85,12 +85,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="textoNav" class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="ubicacion.html">Ubicación</a>
+                            <a class="nav-link" href="ubicacion.html" id="navUbicacionTxt">Ubicación</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                            <a class="nav-link" href="#" id="navNosotrosTxt">Nosotros</a>
                         </li>
-                        <a class="nav-link" href="participa.html">Participa</a>
+                        <a class="nav-link" href="participa.html" id="navParticipaTxt">Participa</a>
                         <li class="nav-item dropdown">
                             <a
                             class="nav-link dropdown-toggle"
@@ -98,6 +98,7 @@
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
+                            id="navProductosTxt"
                             >
                             Productos
                             </a>
@@ -118,6 +119,7 @@
                             type="search"
                             placeholder="Buscar..."
                             aria-label="Search"
+                            id="barraBusqueda"
                         />
                         <button
                             id="botonBuscar"
@@ -127,8 +129,10 @@
                             <div id="iconoBuscar"></div>
                         </button>
                     </form>
-                    <button type="button" id="botonCarrito" class="btn">
-                        <a id="iconoCarrito" href="carrito.html">🛒<span id="badge" class="badge rounded-pill bg-primary">0</span></a>
+                    <button type="button" id="botonCarrito" class="btn btn-outline-primary">
+                        <a id="iconoCarrito" href="carrito.html">🛒
+                            <span id="badge" class="badge rounded-pill bg-danger">0</span>
+                        </a>
                     </button>
                 </div>
             </div>

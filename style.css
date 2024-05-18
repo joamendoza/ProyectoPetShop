@@ -1,56 +1,78 @@
+/*--- Editar color de fondo de la página ---*/
 body{
-    background-color: #026de6;
+    background-color: #F6F1DC;
 }
 
+/*--- Configurar NavBar ---*/
 #navBar{
-  background-color: white;
+  background-color: #146FB8;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 #textoNav{
   font-size: 150%;
 }
-
-#botonCartas{
-  max-width: 100%;
+#navUbicacionTxt, #navNosotrosTxt, #navParticipaTxt, #navProductosTxt {
+  color: lightgray;
+  transition: color 0.3s, background-color 0.3s;
+}
+#navUbicacionTxt:hover, #navNosotrosTxt:hover, #navParticipaTxt:hover, #navProductosTxt:hover {
+  color: white; /* color de la letra al pasarle el mouse por encima */
+  background-color: rgba(255, 255, 255, 0.1); /* color del bloque de fondo */
 }
 
+
+/*--- Configurar carrusel inicial (el que muestra las fotitos al inicio de la pág) ---*/
 #contenedorCarrusel{
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
+/*--- Carrito de compras ---*/
 #botonCarrito{
+  border-color: #146FB8;
+  font-size: 115%;
   margin-left: 1%;
-  border-color: lightgray;
 }
-
 #iconoCarrito {
   text-decoration: none;
 }
 
+/*--- Todo lo relacionado con la barrita de buscar ---*/
 #botonBuscar{
-  border-color: lightgray;
+  background-color: #E91E63;
+  border-color: #E91E63;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
-
+#botonBuscar:hover{
+  background-color: #F8BBD0;
+  border-color: #F8BBD0;
+}
 #iconoBuscar {
   width: 20px;
   height: 20px;
-  background: url('img/lupa.png');
+  background: url('img/lupa2.png');
   background-size: cover;
 
 }
-
 #botonBuscar:hover #iconoBuscar {
-  background: url('img/lupa2.png');
+  background: url('img/lupa.png');
   background-size: 20px;
 }
 
+#barraBusqueda:focus{
+  border-color: #E91E63; /* Cambia el color del borde */
+  box-shadow: 0 0 0 0.25rem rgba(233, 30, 99, 0.25); /* Cambia el color del outline */
+}
+
+
+/*--- Configurar titulo "🔥 PRODUCTOS MÁS POPULARES 🔥" inicio pág ---*/
 #tituloMasVendidos{
   margin-bottom: 10px;
   font-size: 20px;
 }
 
+/*--- Todo lo relacionado con la barrita de redes sociales ---*/
 #fondoRedesSociales{
   background-color: #31363F;
   font-size: 12px;
@@ -63,6 +85,7 @@ body{
   color:aliceblue;
 }
 
+/*--- Todo lo relacionado con el footer ---*/
 #footer{
   background-color:#31363F;
   color: aliceblue;
@@ -73,15 +96,15 @@ body{
   text-align: center;
 }
 
-
+/*--- Botón con la imagen de "DONACIONES" inicio de la pág ---*/
 #botonImagenDonacion{
   padding: 0; /* Eliminar el relleno del botón */
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
+/*--- Probablemente algo relacionado con el carrusel de cartas ---*/
 @media (max-width: 768px) {
-
   .carousel-item .d-flex{
     flex-direction: column;
     align-items: center;
@@ -102,6 +125,20 @@ body{
   margin-top: 20px;
 }
 
+/* Modifica el bloque de fondo en el formulario de "PARTICIPA" */
+#contenidoParticipa{
+  background-color: rgb(20, 111, 184, 0.4);
+  padding: 3%;
+  border-radius: 10px;
+}
+
+/* #botonImagen es la etiqueta dada a los botones con imagen en "UBICACIONES" */
+#botonImagen{
+  margin: 0;
+  padding: 0;
+}
+
+/*--- De aquí para abajo solo Dios sabe lol ---*/
 #containerParametros{
   max-width: 80%;
   font-size: 140%;
@@ -128,13 +165,3 @@ body{
   margin-bottom: 20px;
 }
 
-#botonImagen{
-  margin: 0;
-  padding: 0;
-}
-
-#contenidoParticipa{
-  background-color: rgba(128, 128, 128, 0.7);
-  padding: 3%;
-  border-radius: 10px;
-}

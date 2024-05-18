@@ -52,7 +52,7 @@
                 >
             </li>
             <li class="nav-item">
-                <a id="contenedorRedes" class="nav-link" href="#"
+                <a id="contenedorRedes" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
                 ><img
                     id="iconosSociales"
                     src="img/youtube.png"
@@ -85,12 +85,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="textoNav" class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="ubicacion.html">Ubicación</a>
+                            <a class="nav-link" href="ubicacion.html" id="navUbicacionTxt">Ubicación</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                            <a class="nav-link" href="#" id="navNosotrosTxt">Nosotros</a>
                         </li>
-                        <a class="nav-link" href="participa.html">Participa</a>
+                        <a class="nav-link" href="participa.html" id="navParticipaTxt">Participa</a>
                         <li class="nav-item dropdown">
                             <a
                             class="nav-link dropdown-toggle"
@@ -98,6 +98,7 @@
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false"
+                            id="navProductosTxt"
                             >
                             Productos
                             </a>
@@ -111,9 +112,6 @@
                             <li><a class="dropdown-item" href="#">Juguetes</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="carrito.html">🛒</a>
-                        </li>
                     </ul>
                     <form class="d-flex" role="search">
                         <input
@@ -121,6 +119,7 @@
                             type="search"
                             placeholder="Buscar..."
                             aria-label="Search"
+                            id="barraBusqueda"
                         />
                         <button
                             id="botonBuscar"
@@ -130,6 +129,11 @@
                             <div id="iconoBuscar"></div>
                         </button>
                     </form>
+                    <button type="button" id="botonCarrito" class="btn btn-outline-primary">
+                        <a id="iconoCarrito" href="carrito.html">🛒
+                            <span id="badge" class="badge rounded-pill bg-danger">0</span>
+                        </a>
+                    </button>
                 </div>
             </div>
         </nav>
@@ -143,33 +147,78 @@
                     <div class="col">
                         <div class="card">
                             <h2 id="tituloTienda" class="card-title">Puente Alto</h2>
-                            <button id="botonImagen" type="button" class="btn"><img src="img/tiendas/puentealto.png" class="card-img-top" alt="..."></button>
+                            <!-- ## al pulsar el botón de la imagem mandará a la dirección en google maps -->
+                            <a href="https://www.google.com/maps/place/Roa+Bustos+01921,+8220797+Puente+Alto,+Región+Metropolitana/@-33.56904,-70.5646678,17z/data=!3m1!4b1!4m6!3m5!1s0x9662d6cfd514fbb9:0xb0a752db9860b309!8m2!3d-33.5690445!4d-70.5620875!16s%2Fg%2F11svpv7prx?entry=ttu" target="_blank">
+                                <button 
+                                    id="botonImagen" type="button" class="btn">
+                                    <img src="img/tiendas/puentealto.png" class="card-img-top" alt="...">
+                                </button>
+                            </a>
                             <div class="card-body">
                                 <p class="card-text">Roa Bustos #01921, Puente Alto.</p>
                                 <p>Region Metropolitana.</p>
-                                <a href="#" class="btn btn-primary">Horarios</a>
+
+                                <!-- ## MODIFICAR EL TEXTO QUE APARECERÁ EN EL MODAL ##-->
+                                <button
+                                    class="btn btn-primary" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#modalHorarios"
+                                    onclick="mostrarHorarios(
+                                        'Puente Alto', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: Cerrado'
+                                    )">Horarios
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card">
                             <h2 id="tituloTienda" class="card-title">Pudahuel</h2>
-                            <button id="botonImagen" type="button" class="btn"><img src="img/tiendas/pudahuel.png" class="card-img-top" alt="..."></button>
+                            <!-- ## al pulsar el botón de la imagen mandará a la dirección en google maps -->
+                            <a href="https://www.google.cl/maps/place/San+Luis+958,+9020480+Pudahuel,+Región+Metropolitana/@-33.4407443,-70.7578281,17z/data=!3m1!4b1!4m6!3m5!1s0x9662c3c82c75d3e3:0x2842851b0a3049b!8m2!3d-33.4407488!4d-70.7552478!16s%2Fg%2F11jb1y2cws?entry=ttu" target="_blank">
+                                <button 
+                                    id="botonImagen" type="button" class="btn">
+                                    <img src="img/tiendas/pudahuel.png" class="card-img-top" alt="...">
+                                </button>
+                            </a>
                             <div class="card-body">
                                 <p class="card-text">San Luis #958, Pudahuel.</p>
                                 <p>Region Metropolitana.</p>
-                                <a href="#" class="btn btn-primary">Horarios</a>
+                        
+                                <!-- ## MODIFICAR EL TEXTO QUE APARECERÁ EN EL MODAL ##-->
+                                <button
+                                    class="btn btn-primary" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#modalHorarios"
+                                    onclick="mostrarHorarios(
+                                        'Pudahuel', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: Cerrado'
+                                    )">Horarios
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div  class="card">
                             <h2 id="tituloTienda" class="card-title">Padre Hurtado</h2>
-                            <button id="botonImagen" type="button" class="btn"><img src="img/tiendas/padrehurtado.png" class="card-img-top" alt="..."></button>
+                             <!-- ## al pulsar el botón de la imagen mandará a la dirección en google maps -->
+                            <a href="https://www.google.com/maps/place/Deumayen+120,+9710137+Padre+Hurtado,+Región+Metropolitana/@-33.5694502,-70.8165909,17z/data=!3m1!4b1!4m6!3m5!1s0x9662e762cdb327db:0x9b98de1a416bdd73!8m2!3d-33.5694502!4d-70.814016!16s%2Fg%2F11vls9wz9p?entry=ttu" target="_blank">
+                                <button 
+                                    id="botonImagen" type="button" class="btn">
+                                    <img src="img/tiendas/padrehurtado.png" class="card-img-top" alt="...">
+                                </button>
+                            </a>
                             <div class="card-body">
                                 <p class="card-text">Deumayen #120, Padre Hurtado.</p>
                                 <p>Region Metropolitana.</p>
-                                <a href="#" class="btn btn-primary">Horarios</a>
+
+                                <!-- ## MODIFICAR EL TEXTO QUE APARECERÁ EN EL MODAL ##-->
+                                <button
+                                    class="btn btn-primary" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#modalHorarios"
+                                    onclick="mostrarHorarios(
+                                        'Padre Hurtado', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: Cerrado'
+                                    )">Horarios
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -177,6 +226,24 @@
             </div>
         </div>
         <!-- FIN UBICACIONES -->
+
+        <!-- Modal de horarios -->
+        <div class="modal fade" id="modalHorarios" tabindex="-1" aria-labelledby="modalHorariosLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalHorariosLabel">Horarios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="horariosContenido"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- COMIENDO FOOTER -->
         <footer id="footer" class="footer">
@@ -187,10 +254,16 @@
         <!-- FIN FOOTER -->
 
         <!-- importaciones de código -->
+        <script>
+            function mostrarHorarios(tienda, horarios) {
+                document.getElementById('modalHorariosLabel').textContent = 'Horarios - ' + tienda;
+                document.getElementById('horariosContenido').innerHTML = horarios.replace(/\n/g, '<br>');
+            }
+        </script>
         <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"
-      ></script>
+        ></script>
     </body>
 </html>
