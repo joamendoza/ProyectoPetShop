@@ -1,42 +1,70 @@
-/*--- Editar color de fondo de la página ---*/
-body{
-    background-color: #F6F1DC;
+/* ### VARIABLES DE COLORES ### */
+:root {
+  /*---- COLORES PÁGINA ----*/
+  --colorBg-pagina: #F6F1DC; /* color del fondo de la página */
 
+  /*---- COLORES NAVBAR ----*/
+  --colorBg-navBar: #146FB8; /* color del fondo del navBar */
+  --colorTexto-navBar: lightgray; /* color del texto del navBar */
+  --colorHover-textoNavbar: white; /* color del texto del navBar al pasar el ratón encima */
+  --colorHover-bloqueTextoNavbar: rgba(255, 255, 255, 0.1); /* color del bloque que aparece en el texto del navBar al pasar el ratón encima*/
+
+  /*---- COLORES BTN CARRITO ----*/
+  --colorBorde-btnCarrito: #146FB8; /* color del borde del botón carrito */
+  --colorHover-bgBtnCarrito:  rgba(255, 255, 255, 0.671); /* color del fondo del botón carrito al pasar el ratón encima */
+  --colorTexto-badge: white; /* color del texto del badge */
+
+  /*---- COLORES BARRITA DE BUSQUEDA ----*/
+  --colorBorde-barraBusqueda: bisque; /* color del borde de la barra de busqueda */
+  --colorBorde-btnBuscar: rgba(246,241,220,1); /* color del borde del botón buscar */
+  --colorBg-btnBuscar: rgba(8, 44, 74,1); /* color del fondo del botón buscar */
+  --colorHover-bgBtnBuscar: rgba(161, 197, 227, 0.671); /* color del fondo del botón buscar al pasar el ratón encima */
+
+  /*---- COLORES BARRA RRSS Y FOOTER ----*/
+  --colorBg-barraRedesSociales: #31363F; /* color del fondo del navBar de las rrss */
+  --colorTexto-barraRedesSociales: aliceblue; /* color del texto del navBar de las rrss */
+  --colorBg-footer: #31363F; /* color del fondo del footer */
+  --colorTexto-footer: aliceblue; /* color del texto del footer */
+}
+
+
+/*--- Editar color de fondo de la página ---*/
+body {
+    background-color: var(--colorBg-pagina);
 }
 
 /*--- Configurar NavBar ---*/
-#navBar{
-  background-color: #146FB8;
+#navBar {
+  background-color: var(--colorBg-navBar);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-#textoNav{
+#textoNav {
   font-size: 150%;
 }
 #navUbicacionTxt, #navNosotrosTxt, #navParticipaTxt, #navProductosTxt {
-  color: lightgray;
+  color: var(--colorTexto-navBar);
   transition: color 0.3s, background-color 0.3s;
   border-radius: 20px;
 }
 #navUbicacionTxt:hover, #navNosotrosTxt:hover, #navParticipaTxt:hover, #navProductosTxt:hover {
-  color: white; /* color de la letra al pasarle el mouse por encima */
-  background-color: rgba(255, 255, 255, 0.1); /* color del bloque de fondo */
+  color: var(--colorHover-textoNavbar); /* color de la letra al pasarle el mouse por encima */
+  background-color: var(--colorHover-bloqueTextoNavbar); /* color del bloque de fondo */
   border-radius: 20px;
 }
-
-.navbar-brand:hover{
-  background-color: rgba(255, 255, 255, 0.1); /* color del bloque de fondo */
+.navbar-brand:hover {
+  background-color: var(--colorHover-bloqueTextoNavbar); /* color del bloque de fondo */
   border-radius: 20px;
 }
 
 /*--- Configurar carrusel inicial (el que muestra las fotitos al inicio de la pág) ---*/
-#contenedorCarrusel{
+#contenedorCarrusel {
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
 /*--- Carrito de compras ---*/
-#botonCarrito{
+#botonCarrito {
   height: 38px; /* Altura del botón de búsqueda */
   position: relative;
   display: inline-flex;
@@ -45,21 +73,18 @@ body{
   margin-left: 0.4%;
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
   border-radius: 20px;
-  border-color: #146FB8;
+  border-color: var(--colorBorde-btnCarrito);
 }
-
 /* Estilo específico para dispositivos móviles */
 @media screen and (max-width: 767px) {
   #botonCarrito {
     margin-top: 2%; /* Aplicar margen superior solo en dispositivos móviles */
   }
 }
-
 #botonCarrito:hover{
-  background-color: rgba(255, 255, 255, 0.671);
+  background-color: var(--colorHover-bgBtnCarrito);
   border-color: none;
 }
-
 #iconoCarrito {
   display: inline-block;
   width: 24px; /* Ajusta el tamaño según sea necesario */
@@ -68,22 +93,17 @@ body{
   background-size: contain;
   margin-right: 5px; /* Espacio entre el icono y la insignia */
 }
-
 #botonCarrito:hover #iconoCarrito {
   background: url('img/carro.png') no-repeat center center;
   background-size: contain;
 }
-
 #badge {
   position: absolute;
   top: -5px;
   right: -5px;
   font-size: 12px; /* Ajusta el tamaño según sea necesario */
-  background-color: #E91E63;
-  color: white;
+  color: var(--colorTexto-badge);
 }
-
-
 
 /*--- Todo lo relacionado con la barrita de buscar ---*/
 #botonBuscar {
@@ -91,14 +111,12 @@ body{
   border-radius: 0 20px 20px 0;
   border-left: none;
   transition: color 0.3s, background-color 0.3s, border-color 0.3s;
-  border-color: rgba(246,241,220,1);
-  background-color:rgba(8, 44, 74,1);
+  border-color: var(--colorBorde-btnBuscar);
+  background-color: var(--colorBg-btnBuscar);
 }
-
 #botonBuscar:hover {
-  background-color: rgba(161, 197, 227, 0.671);
+  background-color: var(--colorHover-bgBtnBuscar);
 }
-
 #iconoBuscar {
   display: inline-block;
   width: 25px;
@@ -107,14 +125,12 @@ body{
   background: url('img/lupa2.png') no-repeat center center;
   background-size: cover;
 }
-
 #botonBuscar:hover #iconoBuscar {
   background: url('img/lupa.png') no-repeat center center;
   background-size: cover;
 }
-
 #barraBusqueda {
-  border-color: bisque;
+  border-color: var(--colorBorde-barraBusqueda);
   height: 40px;
   border-radius: 20px 0 0 20px;
   border-right: none;
@@ -122,28 +138,28 @@ body{
 }
 
 /*--- Configurar titulo "🔥 PRODUCTOS MÁS POPULARES 🔥" inicio pág ---*/
-#tituloMasVendidos{
+#tituloMasVendidos {
   margin-bottom: 10px;
   font-size: 20px;
 }
 
 /*--- Todo lo relacionado con la barrita de redes sociales ---*/
-#fondoRedesSociales{
-  background-color: #31363F;
+#fondoRedesSociales {
+  background-color: var(--colorBg-barraRedesSociales);
   font-size: 12px;
 }
-#iconosSociales{
+#iconosSociales {
   margin-right: 5px;
   margin-bottom: 4px;
 }
-#contenedorRedes{
-  color:aliceblue;
+#contenedorRedes {
+  color:var(--colorTexto-barraRedesSociales);
 }
 
 /*--- Todo lo relacionado con el footer ---*/
-#footer{
-  background-color:#31363F;
-  color: aliceblue;
+#footer {
+  background-color: var(--colorBg-footer);
+  color: var(--colorTexto-footer);
   position: relative;
   margin-bottom: 0px;
 }
