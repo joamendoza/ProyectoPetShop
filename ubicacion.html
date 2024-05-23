@@ -16,6 +16,7 @@
         <script src="funciones.js"></script>
     </head>
     <body>
+      <div class="wrapper">
     <!-- COMIENZO REDES SOCIALES -->
     <div id="fondoRedesSociales" class="container-fluid">
         <ul class="nav justify-content-center">
@@ -121,11 +122,11 @@
                 <button class="btn btn-outline-secondary" type="button" id="botonBuscar"><span id="iconoBuscar"></span></button>
               </div>            
             </form>                  
-            <button type="button" id="botonCarrito" class="btn btn-outline-primary">
-              <a id="iconoCarrito" href="carrito.html">
-                <span id="badge" class="badge rounded-pill bg-danger">0</span>
-              </a>
-            </button>
+            <a id="botonCarrito" href="carrito.html" class="btn btn-outline-primary">
+              <span id="iconoCarrito">
+              </span>
+              <span id="badge" class="badge rounded-pill bg-danger">0</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -247,18 +248,25 @@
             <p id="horariosContenidoOffcanvas"></p>
           </div>
         </div>
-
-        <!-- COMIENDO FOOTER -->
-        <footer id="footer" class="footer">
-            <div id="textoFooter" class="container">
-            <span class="text">Copyright © 2024</span>
-            </div>
-        </footer>
-        <!-- FIN FOOTER -->
+      </div>
+              <!-- COMIENZO FOOTER -->
+              <footer id="footer" class="footer py-3">
+                <div id="textoFooter" class="container">
+                  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Inicio</a></li>
+                    <li class="nav-item"><a href="ubicacion.html" class="nav-link px-2 text-body-secondary">Ubicación</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
+                    <li class="nav-item"><a href="participa.html" class="nav-link px-2 text-body-secondary">Participa</a></li>
+                  </ul>
+                  <span class="text">ProyectoPetShop © 2024</span>
+                </div>
+              </footer>
+              <!-- FIN FOOTER -->
         <script>
           valorBadgeCarrito();
         </script>
-        <!-- importaciones de código -->
+        <!-- Importaciones de código -->
+        <script src="footer.js"></script>
         <script>
             function mostrarHorarios(tienda, horarios) {
                 // Accede al elemento con el ID específico del offcanvas

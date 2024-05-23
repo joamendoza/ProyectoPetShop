@@ -47,9 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cantidadProductos === 0) {
             // Si la cantidad de productos es 0, oculta la insignia
             badgeElement.style.display = 'none';
-        } else {
+        }else {
             // Si hay productos en el carrito, muestra la cantidad y la insignia
-            badgeElement.textContent = cantidadProductos;
+            if (cantidadProductos > 9 ){
+                badgeElement.textContent = '9+';
+            } else {
+                badgeElement.textContent = cantidadProductos;
+            }
             badgeElement.style.display = 'block'; // Asegúrate de que la insignia esté visible
         }
         

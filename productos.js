@@ -127,8 +127,12 @@ function actualizarBadge() {
         // Si la cantidad de productos es 0, oculta la insignia
         badgeElement.style.display = 'none';
     } else {
+        if (cantidadProductos > 9 ){
+            badgeElement.textContent = '9+';
+        } else {
+            badgeElement.textContent = cantidadProductos;
+        }
         // Si hay productos en el carrito, muestra la cantidad y la insignia
-        badgeElement.textContent = cantidadProductos;
         badgeElement.style.display = 'block'; // Asegúrate de que la insignia esté visible
     }
     

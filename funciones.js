@@ -9,7 +9,11 @@ function valorBadgeCarrito() {
             badgeElement.style.display = 'none';
         } else {
             // Si hay productos en el carrito, muestra la cantidad y la insignia
-            badgeElement.textContent = cantidadProductos;
+            if (cantidadProductos > 9 ){
+                badgeElement.textContent = '9+';
+            } else {
+                badgeElement.textContent = cantidadProductos;
+            }
             badgeElement.style.display = 'block'; // Asegúrate de que la insignia esté visible
         }
     }

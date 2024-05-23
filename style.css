@@ -1,3 +1,6 @@
+/* ### FUENTES ### */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap');
+
 /* ### VARIABLES DE COLORES ### */
 :root {
   /*---- COLORES PÁGINA ----*/
@@ -24,13 +27,14 @@
   --colorBg-barraRedesSociales: #31363F; /* color del fondo del navBar de las rrss */
   --colorTexto-barraRedesSociales: aliceblue; /* color del texto del navBar de las rrss */
   --colorBg-footer: #31363F; /* color del fondo del footer */
-  --colorTexto-footer: aliceblue; /* color del texto del footer */
+  --colorTexto-footer: #F6F1DC; /* color del texto del footer */
 }
 
 
 /*--- Editar color de fondo de la página ---*/
 body {
     background-color: var(--colorBg-pagina);
+    font-family: 'Anek Tamil', sans-serif;
 }
 
 /*--- Configurar NavBar ---*/
@@ -65,7 +69,7 @@ body {
 
 /*--- Carrito de compras ---*/
 #botonCarrito {
-  height: 38px; /* Altura del botón de búsqueda */
+  height: 42px; /* Altura del botón de búsqueda */
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -87,21 +91,22 @@ body {
 }
 #iconoCarrito {
   display: inline-block;
-  width: 24px; /* Ajusta el tamaño según sea necesario */
-  height: 24px;
+  width: 28px; /* Ajusta el tamaño según sea necesario */
+  height: 28px;
   background: url('img/carro2.png') no-repeat center center;
   background-size: contain;
-  margin-right: 5px; /* Espacio entre el icono y la insignia */
+  margin-right: 1px; /* Espacio entre el icono y la insignia */
 }
 #botonCarrito:hover #iconoCarrito {
   background: url('img/carro.png') no-repeat center center;
   background-size: contain;
 }
 #badge {
+  display: none;
   position: absolute;
   top: -5px;
   right: -5px;
-  font-size: 12px; /* Ajusta el tamaño según sea necesario */
+  font-size: 11px; /* Ajusta el tamaño según sea necesario */
   color: var(--colorTexto-badge);
 }
 
@@ -120,7 +125,7 @@ body {
 #iconoBuscar {
   display: inline-block;
   width: 25px;
-  height: 25px; /* Ajustar la altura del icono para que coincida con la del botón */
+  height: 25px;
   margin-right: -1px;
   background: url('img/lupa2.png') no-repeat center center;
   background-size: cover;
@@ -161,10 +166,19 @@ body {
   background-color: var(--colorBg-footer);
   color: var(--colorTexto-footer);
   position: relative;
-  margin-bottom: 0px;
+  width: 100%;
+  padding: 10px 0;
 }
 #textoFooter{
   text-align: center;
+}
+
+#textoFooter .nav-link {
+  color: #F6F1DC !important;
+}
+
+#textoFooter .border-bottom {
+  border-color: #F6F1DC !important;
 }
 
 /*--- Botón con la imagen de "DONACIONES" inicio de la pág ---*/
