@@ -12,6 +12,8 @@
         crossorigin="anonymous"
         />
         <link rel="stylesheet" href="style.css">
+        <!-- Funciones JS -->
+        <script src="funciones.js"></script>
     </head>
     <body>
     <!-- COMIENZO REDES SOCIALES -->
@@ -151,10 +153,10 @@
                                 <!-- ## MODIFICAR EL TEXTO QUE APARECERÁ EN EL MODAL ##-->
                                 <button
                                     class="btn btn-primary" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#modalHorarios"
+                                    data-bs-toggle="offcanvas" 
+                                    data-bs-target="#offcanvasRight"
                                     onclick="mostrarHorarios(
-                                        'Puente Alto', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: Cerrado'
+                                        'Puente Alto', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: 11:30 - 16:00'
                                     )">Horarios
                                 </button>
                             </div>
@@ -177,8 +179,8 @@
                                 <!-- ## MODIFICAR EL TEXTO QUE APARECERÁ EN EL MODAL ##-->
                                 <button
                                     class="btn btn-primary" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#modalHorarios"
+                                    data-bs-toggle="offcanvas" 
+                                    data-bs-target="#offcanvasRight"
                                     onclick="mostrarHorarios(
                                         'Pudahuel', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: Cerrado'
                                     )">Horarios
@@ -203,8 +205,8 @@
                                 <!-- ## MODIFICAR EL TEXTO QUE APARECERÁ EN EL MODAL ##-->
                                 <button
                                     class="btn btn-primary" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#modalHorarios"
+                                    data-bs-toggle="offcanvas" 
+                                    data-bs-target="#offcanvasRight"
                                     onclick="mostrarHorarios(
                                         'Padre Hurtado', 'Lunes a Viernes: 9:00 - 18:00\nSábado: 10:00 - 14:00\nDomingo: Cerrado'
                                     )">Horarios
@@ -235,6 +237,17 @@
             </div>
         </div>
 
+        <!--Offcanvas-->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p id="horariosContenidoOffcanvas"></p>
+          </div>
+        </div>
+
         <!-- COMIENDO FOOTER -->
         <footer id="footer" class="footer">
             <div id="textoFooter" class="container">
@@ -242,12 +255,15 @@
             </div>
         </footer>
         <!-- FIN FOOTER -->
-
+        <script>
+          valorBadgeCarrito();
+        </script>
         <!-- importaciones de código -->
         <script>
             function mostrarHorarios(tienda, horarios) {
-                document.getElementById('modalHorariosLabel').textContent = 'Horarios - ' + tienda;
-                document.getElementById('horariosContenido').innerHTML = horarios.replace(/\n/g, '<br>');
+                // Accede al elemento con el ID específico del offcanvas
+                document.getElementById('offcanvasRightLabel').textContent = 'Horarios - ' + tienda;
+                document.getElementById('horariosContenidoOffcanvas').innerHTML = horarios.replace(/\n/g, '<br>');
             }
         </script>
         <script

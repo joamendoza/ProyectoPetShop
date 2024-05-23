@@ -78,7 +78,7 @@ body {
 /* Estilo específico para dispositivos móviles */
 @media screen and (max-width: 767px) {
   #botonCarrito {
-    margin-top: 2%; /* Aplicar margen superior solo en dispositivos móviles */
+    margin-top: 3%; /* Aplicar margen superior solo en dispositivos móviles */
   }
 }
 #botonCarrito:hover{
@@ -219,6 +219,7 @@ body {
   border-style: solid;
   border-color: #0B2447;
   border-width: 1px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 #contenedorProducto{
