@@ -1,0 +1,221 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- IMPORTACIÓN BOOTSTRAP Y HOJA DE ESTILOS -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correas | Max & Molly</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static '/style.css' %}">
+    <!-- Funciones JS -->
+    <script src="{% static '/js/funciones.js' %}"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+    <!-- COMIENZO REDES SOCIALES -->
+    <div id="fondoRedesSociales" class="container-fluid">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a
+            id="contenedorRedes"
+            class="nav-link active"
+            aria-current="page"
+            href="https://web.facebook.com/reel/322317047490245/" target="_blank"
+            ><img
+              id="iconosSociales"
+              src="{% static '/imagenes/iconos/facebook.png' %}"
+              alt=""
+              width="15"
+            />Facebook</a
+          >
+        </li>
+        <li class="nav-item">
+          <a id="contenedorRedes" class="nav-link" href="https://www.instagram.com/p/CpIu34yLTFf/?hl=es-la" target="_blank"
+            ><img
+              id="iconosSociales"
+              src="{% static '/imagenes/iconos/instagram.png' %}"
+              alt=""
+              width="15"
+            />Instagram</a
+          >
+        </li>
+        <li class="nav-item">
+          <a id="contenedorRedes" class="nav-link" href="https://www.tiktok.com/@f_por_el_bicho_4/video/7177571008168217861" target="_blank"
+            ><img
+              id="iconosSociales"
+              src="{% static '/imagenes/iconos/tiktok.png' %}"
+              alt=""
+              width="15"
+            />Tik-Tok</a
+          >
+        </li>
+        <li class="nav-item">
+          <a id="contenedorRedes" class="nav-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"
+            ><img
+              id="iconosSociales"
+              src="{% static '/imagenes/iconos/youtube.png' %}"
+              alt=""
+              width="15"
+            />YouTube</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- FIN REDES SOCIALES -->
+
+    <!-- INICIO NAVBAR -->
+    <nav id="navBar" class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index/">
+          <img src="{% static '/imagenes/iconos/icon.png' %}" alt="logo" width="120" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="textoNav" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/ubicacion/" id="navUbicacionTxt">Ubicación</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="navNosotrosTxt">Nosotros</a>
+            </li>
+            <a class="nav-link" href="/participa/" id="navParticipaTxt">Participa</a>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                id="navProductosTxt"
+              >
+                Productos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/bandanas/">Bandanas</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="/correas/">Correas</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Identificaciones</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Juguetes</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <div class="input-group">
+              <input id="barraBusqueda" type="text" class="form-control" placeholder="Busca tu producto!" aria-label="Buscar" aria-describedby="botonBuscar">
+              <button class="btn btn-outline-secondary" type="button" id="botonBuscar"><span id="iconoBuscar"></span></button>
+            </div>
+            <div id="resultadosBusqueda" class="dropdown-menu" aria-labelledby="barraBusqueda"></div>      
+          </form>                  
+          <a id="botonCarrito" href="/carrito/" class="btn btn-outline-primary">
+            <span id="iconoCarrito">
+            </span>
+            <span id="badge" class="badge rounded-pill bg-danger">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- FIN NAVBAR -->
+
+        <!-- INICIO FILTRO POR MARCAS -->
+        <div id="containerParametros" class="container-fluid sticky-top rounded-pill">
+          <ul class="nav nav-pills">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Marcas</a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/correas/max-and-molly/">MAX & MOLLY</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/correas/wilderdog/">WILDERDOG</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/correas/">TODOS</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+      <!-- FIN FILTRO POR MARCAS -->
+
+        <!-- INICIO CONTENIDO PÁGINA -->
+        <div id="contenedorProducto" class="container-fluid">
+            <div class="row justify-content-center text-center mb-5">
+                <h1>MAX & MOLLY</h1>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <button id="botonImagen" type="button" class="btn"><img src="img/correas/mm1.jpg" class="card-img-top" alt="..."></button>
+                            <div class="card-body">
+                                <h5 class="card-title">Correa Black</h5>
+                                <p class="card-text">$19.990</p>
+                                <a href="#" class="btn btn-primary">Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <button id="botonImagen" type="button" class="btn"><img src="img/correas/mm2.jpg" class="card-img-top" alt="..."></button>
+                            <div class="card-body">
+                                <h5 class="card-title">Correa Tropical</h5>
+                                <p class="card-text">$19.990</p>
+                                <a href="#" class="btn btn-primary">Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <button id="botonImagen" type="button" class="btn"><img src="img/correas/mm3.jpg" class="card-img-top" alt="..."></button>
+                            <div class="card-body">
+                                <h5 class="card-title">Correa Retro Pink</h5>
+                                <p class="card-text">$19.990</p>
+                                <a href="#" class="btn btn-primary">Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN CONTENIDO PÁGINA -->
+      </div>
+
+      <!-- COMIENDO FOOTER -->
+      <footer id="footer" class="footer py-3">
+        <div id="textoFooter" class="container">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/index/" class="nav-link px-2 text-body-secondary">Inicio</a></li>
+            <li class="nav-item"><a href="/ubicacion/" class="nav-link px-2 text-body-secondary">Ubicación</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
+            <li class="nav-item"><a href="/participa/" class="nav-link px-2 text-body-secondary">Participa</a></li>
+          </ul>
+          <span class="text">ProyectoPetShop © 2024</span>
+        </div>
+      </footer>
+      <!-- FIN FOOTER -->
+
+      <!-- importaciones de codigo -->
+      <script>
+        valorBadgeCarrito();
+      </script>
+      <!-- Importaciones de código -->
+      <script src="{% static '/js/footer.js' %}"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
+    </body>
+</html>
