@@ -35,7 +35,15 @@
 body {
     background-color: var(--colorBg-pagina);
     font-family: 'Anek Tamil', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
+main {
+  flex: 1;
+}
+
 
 /*--- Configurar NavBar ---*/
 #navBar {
@@ -162,13 +170,19 @@ body {
 }
 
 /*--- Todo lo relacionado con el footer ---*/
-#footer {
+
+.footer{
   background-color: var(--colorBg-footer);
   color: var(--colorTexto-footer);
   position: relative;
   width: 100%;
   padding: 10px 0;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+  margin-top: auto;
 }
+
 #textoFooter{
   text-align: center;
 }
