@@ -26,7 +26,7 @@ $(document).ready(function() {
 });
 
 // Aquí se crea el carousel con los productos
-crearCardProducto();
+crearCardProducto(productos);
 
 function crearCardProducto(productos) {
     const cantidadCardsPorSlide = 4;

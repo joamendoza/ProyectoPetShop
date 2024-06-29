@@ -40,7 +40,17 @@ urlpatterns = [
     path('bandanas/the-black-dog/', the_black_dog),
     path('bandanas/wildebeest/', wildebeest),
 
-    path('api/productos_populares/', views.obtener_productos_populares, name='productos_populares')
+
+    path('api/productos_populares/', views.obtener_productos_populares, name='productos_populares'),
+
+    path('api/productos_bandana/', views.obtener_productos_bandana, name='productos_bandana'),
+    path('api/productos_bandana_theblackdog/', views.obtener_productos_bandana_theblackdog, name='productos_bandana_theblackdog'),
+    path('api/productos_bandana_maxandmolly/', views.obtener_productos_bandana_maxandmolly, name='productos_bandana_maxandmolly'),
+    path('api/productos_bandana_wildebeest/', views.obtener_productos_bandana_wildebeest, name='productos_bandana_wildebeest'),
+
+    path('api/productos_correa/', views.obtener_productos_correa, name='productos_correa'),
+    path('api/productos_correa_maxandmolly/', views.obtener_productos_correa_maxandmolly, name='productos_correa_maxandmolly'),
+    path('api/productos_correa_wilderdog/', views.obtener_productos_correa_wilderdog, name='productos_correa_wilderdog')
 ]
 
 

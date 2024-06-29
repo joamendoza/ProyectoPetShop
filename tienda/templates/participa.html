@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Participa</title>
   <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-  crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
   />
   <link rel="stylesheet" href="{% static '/style.css' %}">
   <!-- Funciones JS -->
@@ -18,7 +18,6 @@
 </head>
 <body>
   <main>
-  <div class="wrapper">
     <!-- COMIENZO REDES SOCIALES -->
     <div id="fondoRedesSociales" class="container-fluid">
       <ul class="nav justify-content-center">
@@ -137,150 +136,145 @@
 
     <!-- INICIO CONTENIDO PÁGINA -->
     <div id="contenidoParticipa" class="container mt-5 mb-5">
-        <h3 class="mb-4">¡Regístrate y participa por fabulosos premios!</h3>
-    
-        <!-- Formulario de registro -->
-        <form id="registroForm">
-            <!-- Input Group para Nombre de usuario -->
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Nombre de usuario</span>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="usernameInput" placeholder="(min. 5 caracteres)" required>
-            </div>
-    
-            <!-- Input Group para Correo Electrónico -->
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Correo Electrónico</span>
-                <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="emailInput" required>
-            </div>
-    
-            <!-- Input Group para Fecha de nacimiento -->
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
-              <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="birthdateInput" required>
-            </div>
-      
-            <!-- Botón de Registro -->
-            <button type="submit" class="btn btn-primary">REGISTRAR</button>
-        </form>
+      <h3 class="mb-4">¡Regístrate y participa por fabulosos premios!</h3>
+  
+      <!-- Formulario de registro -->
+      <form id="registroForm">
+        <!-- Input Group para Nombre de usuario -->
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Nombre de usuario</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="usernameInput" placeholder="(min. 5 caracteres)" required>
+        </div>
+
+        <!-- Input Group para Correo Electrónico -->
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Correo Electrónico</span>
+          <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="emailInput" required>
+        </div>
+
+        <!-- Input Group para Fecha de nacimiento -->
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Fecha de nacimiento</span>
+          <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="birthdateInput" required>
+        </div>
+  
+        <!-- Botón de Registro -->
+        <button type="submit" class="btn btn-primary">REGISTRAR</button>
+      </form>
     </div>
 
     <!-- Modal de Registro Exitoso -->
     <div class="modal fade" id="registroExitosoModal" tabindex="-1" aria-labelledby="registroExitosoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="registroExitosoModalLabel">¡Registro Exitoso!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¡Tu registro ha sido completado exitosamente!
-                    <br>
-                    Revisa tu correo electrónico para completar la verificación de usuario
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
-                </div>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registroExitosoModalLabel">¡Registro Exitoso!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¡Tu registro ha sido completado exitosamente!
+            <br>
+            Revisa tu correo electrónico para completar la verificación de usuario
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+          </div>
         </div>
+      </div>
     </div>
   </main>
 
-    <!-- COMIENDO FOOTER -->
-    <footer id="footer" class="footer py-3">
-      <div id="textoFooter" class="container">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="/index/" class="nav-link px-2 text-body-secondary">Inicio</a></li>
-          <li class="nav-item"><a href="/ubicacion/" class="nav-link px-2 text-body-secondary">Ubicación</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
-          <li class="nav-item"><a href="/participa/" class="nav-link px-2 text-body-secondary">Participa</a></li>
-        </ul>
-        <span class="text">ProyectoPetShop © 2024</span>
-      </div>
-    </footer>
-    <!-- FIN FOOTER -->
+  <!-- COMIENDO FOOTER -->
+  <footer id="footer" class="footer py-3">
+    <div id="textoFooter" class="container">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="/index/" class="nav-link px-2 text-body-secondary">Inicio</a></li>
+        <li class="nav-item"><a href="/ubicacion/" class="nav-link px-2 text-body-secondary">Ubicación</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nosotros</a></li>
+        <li class="nav-item"><a href="/participa/" class="nav-link px-2 text-body-secondary">Participa</a></li>
+      </ul>
+      <span class="text">ProyectoPetShop © 2024</span>
+    </div>
+  </footer>
+  <!-- FIN FOOTER -->
 
-    <!-- importaciones de codigo -->
-    <script>
-      valorBadgeCarrito();
-    </script>
-    <!-- Importaciones de código -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      $(document).ready(function () {
-          // Obtener el formulario de registro y sus campos de entrada
-          const $registroForm = $('#registroForm');
-          const $usernameInput = $('#usernameInput');
-          const $emailInput = $('#emailInput');
-          const $birthdateInput = $('#birthdateInput');
-          function setMaxDate() {
-            // Obtener la fecha actual
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0!
-            var yyyy = today.getFullYear();
-            today = yyyy + '-' + mm + '-' + dd;
-            
-            // Establecer el atributo max del campo de fecha como la fecha actual
-            document.getElementById("birthdateInput").setAttribute("max", today);
+  <!-- importaciones de codigo -->
+  <script>valorBadgeCarrito();</script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Obtener el formulario de registro y sus campos de entrada
+      const $registroForm = $('#registroForm');
+      const $usernameInput = $('#usernameInput');
+      const $emailInput = $('#emailInput');
+      const $birthdateInput = $('#birthdateInput');
+      function setMaxDate() {
+        // Obtener la fecha actual
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+        
+        // Establecer el atributo max del campo de fecha como la fecha actual
+        document.getElementById("birthdateInput").setAttribute("max", today);
+      }
+
+      // Agregar un evento de escucha para el evento submit del formulario
+      $registroForm.on('submit', function (event) {
+        // Prevenir el comportamiento predeterminado del formulario (enviar datos)
+        event.preventDefault();
+
+        // Validar los campos de entrada
+        let isValid = true;
+
+        // Validar Nombre de usuario
+        if ($usernameInput.val().trim() === '' || $usernameInput.val().trim().length < 5) {	
+          isValid = false;
+          alert('Por favor, ingrese un nombre de usuario\n(min. 5 caracteres).');
+        }
+        
+        // Validar Correo Electrónico
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test($emailInput.val().trim())) {
+          isValid = false;
+          alert('Por favor, ingrese un correo electrónico válido.');
+        }
+
+        // Validar Fecha de nacimiento y edad
+        const birthdate = new Date($birthdateInput.val());
+        const today = new Date();
+        const age = today.getFullYear() - birthdate.getFullYear();
+        const month = today.getMonth() - birthdate.getMonth();
+        if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+          age--;
+        }
+        if (age < 5 || age > 130) {
+          isValid = false;
+          if (age < 5) {
+            alert('La edad debe ser mayor o igual a 5 años.');
+          } else if (age > 130) {
+            alert('La edad no puede exceder los 130 años.');
           }
+        }
+        if (isValid) {
+          // Mostrar el modal de registro exitoso
+          const registroExitosoModal = new bootstrap.Modal($('#registroExitosoModal'));
+          registroExitosoModal.show();
 
-          // Agregar un evento de escucha para el evento submit del formulario
-          $registroForm.on('submit', function (event) {
-              // Prevenir el comportamiento predeterminado del formulario (enviar datos)
-              event.preventDefault();
-    
-              // Validar los campos de entrada
-              let isValid = true;
-    
-              // Validar Nombre de usuario
-              if ($usernameInput.val().trim() === '' || $usernameInput.val().trim().length < 5) {	
-                  isValid = false;
-                  alert('Por favor, ingrese un nombre de usuario\n(min. 5 caracteres).');
-              }
-              
-              // Validar Correo Electrónico
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (!emailRegex.test($emailInput.val().trim())) {
-                  isValid = false;
-                  alert('Por favor, ingrese un correo electrónico válido.');
-              }
-    
-              // Validar Fecha de nacimiento y edad
-              const birthdate = new Date($birthdateInput.val());
-              const today = new Date();
-              const age = today.getFullYear() - birthdate.getFullYear();
-              const month = today.getMonth() - birthdate.getMonth();
-              if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
-                  age--;
-              }
-              if (age < 5 || age > 130) {
-                  isValid = false;
-                  if (age < 5) {
-                      alert('La edad debe ser mayor o igual a 5 años.');
-                  } else if (age > 130) {
-                      alert('La edad no puede exceder los 130 años.');
-                  }
-              }
-              if (isValid) {
-                  // Mostrar el modal de registro exitoso
-                  const registroExitosoModal = new bootstrap.Modal($('#registroExitosoModal'));
-                  registroExitosoModal.show();
-    
-                  // Limpiar los campos de texto después de que se muestre el modal
-                  registroExitosoModal._element.addEventListener('hidden.bs.modal', function () {
-                      // Limpiar los campos de texto
-                      $usernameInput.val('');
-                      $emailInput.val('');
-                      $birthdateInput.val('');
-                  });
-              }
+          // Limpiar los campos de texto después de que se muestre el modal
+          registroExitosoModal._element.addEventListener('hidden.bs.modal', function () {
+            // Limpiar los campos de texto
+            $usernameInput.val('');
+            $emailInput.val('');
+            $birthdateInput.val('');
           });
-          window.onload = setMaxDate();
+        }
       });
-    </script>
-    <!-- FIN CONTENIDO PÁGINA -->
+      window.onload = setMaxDate();
+    });
+  </script>
+  <!-- FIN CONTENIDO PÁGINA -->
 </body>
 </html>
