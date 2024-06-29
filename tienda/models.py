@@ -22,7 +22,7 @@ class Producto(models.Model):
     foto = models.ImageField(upload_to='productos/')
 
     def __str__(self):
-        return f"Producto {self.id}: {self.nombre}"
+        return f"Producto {self.id} | {self.tipo_producto} {self.marca}: {self.nombre} | Popular: {self.producto_popular}"
 
 # Pequeña adición que corrige el plural de Django al generar la tabla
 class Meta:

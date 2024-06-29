@@ -5,22 +5,30 @@ const badgeElement = document.getElementById('badge');
 
 actualizarBadge(); // Actualiza el badge al valor actual
 
-const productos = [
-    { id: 1, nombre: 'Bandana Black Sheep', precio: 6490 },
-    { id: 2, nombre: 'Correa Tropical', precio: 19990 },
-    { id: 3, nombre: 'Bandana Watermelon', precio: 6490 },
-    { id: 4, nombre: 'Bandana Summer Roja', precio: 5990 },
-    { id: 5, nombre: 'Bandana Ducks', precio: 6490 },
-    { id: 6, nombre: 'Correa Multicolor', precio: 23990 },
-    { id: 7, nombre: 'Correa Mini Multicolor', precio: 16990 },
-    { id: 8, nombre: 'Bandana Collar Deep Blue', precio: 10190 },
-];
+$(document).ready(function() {
+    $.ajax({
+        url: '/api/productos_populares/',
+        method: 'GET',
+        success: function(data) {
+            const productos = data.map(producto => ({
+                id: producto.id,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                foto: producto.foto
+            }));
+            crearCardProducto(productos);
+            agregarEventListeners();
+        },
+        error: function(error) {
+            console.error('Error al obtener los productos populares:', error);
+        }
+    });
+});
 
 // Aquí se crea el carousel con los productos
 crearCardProducto();
 
-
-function crearCardProducto() {
+function crearCardProducto(productos) {
     const cantidadCardsPorSlide = 4;
     const cantidadCards = productos.length;
     
@@ -50,7 +58,7 @@ function crearCardProducto() {
         card.classList.add('p-2');
         card.innerHTML = `
             <div class="card h-100">
-                <img src="imagenes-productos/producto${productos[i].id}.jpg" class="card-img-top border-bottom border-2" alt="${productos[i].nombre}">
+                <img src="/media/${productos[i].foto}" class="card-img-top border-bottom border-2" alt="${productos[i].nombre}">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div class="mb-4">
                         <h5 class="card-title">${formatearPrecio(productos[i].precio)}</h5>
@@ -59,7 +67,8 @@ function crearCardProducto() {
                     <button class="btn btn-primary agregar-carrito w-80 mx-auto"
                     data-id="${productos[i].id}"
                     data-nombre="${productos[i].nombre}"
-                    data-precio="${productos[i].precio}">
+                    data-precio="${productos[i].precio}"
+                    data-foto="${productos[i].foto}">
                     agregar al carrito
                     </button>
                 </div>
@@ -81,28 +90,32 @@ function formatearPrecio(precio) {
     return formatter.format(precio);
 }
 
-// Event listener para agregar productos al carrito
-productosContainer.addEventListener('click', event => {
-    if (event.target.classList.contains('agregar-carrito')) {
-    const button = event.target;
-    const id = button.dataset.id;
-    const nombre = button.dataset.nombre;
-    const precio = parseFloat(button.dataset.precio);
+function agregarEventListeners() {
+    const productosContainer = document.getElementById('carouselExample');
 
-    agregarProductoAlCarrito(id, nombre, precio);
-    // Iniciar animación
-    iniciarAnimacionProducto(button);
-    }
-});
+    productosContainer.addEventListener('click', event => {
+        if (event.target.classList.contains('agregar-carrito')) {
+            const button = event.target;
+            const id = button.dataset.id;
+            const nombre = button.dataset.nombre;
+            const precio = parseFloat(button.dataset.precio);
+            const foto = button.dataset.foto; // Agregar la imagen
 
-function agregarProductoAlCarrito(id, nombre, precio) {
+            agregarProductoAlCarrito(id, nombre, precio, foto);
+            // Iniciar animación
+            iniciarAnimacionProducto(button);
+        }
+    });
+}
+
+function agregarProductoAlCarrito(id, nombre, precio, foto) {
     let carrito = obtenerCarrito();
     const productoExistente = carrito.find(item => item.id === id);
 
     if (productoExistente) {
-    productoExistente.cantidad++;
+        productoExistente.cantidad++;
     } else {
-    carrito.push({ id, nombre, precio, cantidad: 1 });
+        carrito.push({ id, nombre, precio, foto, cantidad: 1 });
     }
 
     // Mostrar el toast de producto añadido
@@ -111,9 +124,8 @@ function agregarProductoAlCarrito(id, nombre, precio) {
     toastInstance.show();
 
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    actualizarBadge();      // Actualiza el badge
+    actualizarBadge(); // Actualiza el badge
 }
-
 
 function obtenerCarrito() {
     return localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
@@ -127,7 +139,7 @@ function actualizarBadge() {
         // Si la cantidad de productos es 0, oculta la insignia
         badgeElement.style.display = 'none';
     } else {
-        if (cantidadProductos > 9 ){
+        if (cantidadProductos > 9) {
             badgeElement.textContent = '9+';
         } else {
             badgeElement.textContent = cantidadProductos;
@@ -174,6 +186,6 @@ function iniciarAnimacionProducto(button) {
             $(this).detach();
         });
     }
-}    
+}
 
 });

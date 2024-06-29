@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from tienda.views import *
+from tienda import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +38,11 @@ urlpatterns = [
     path('bandanas/', bandanas),
     path('bandanas/max-and-molly/', max_and_molly),
     path('bandanas/the-black-dog/', the_black_dog),
-    path('bandanas/wildebeest/', wildebeest)
+    path('bandanas/wildebeest/', wildebeest),
+
+    path('api/productos_populares/', views.obtener_productos_populares, name='productos_populares')
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

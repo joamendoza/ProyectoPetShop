@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyMessage = document.getElementById('empty-message');
     const badgeElement = document.getElementById('badge');
     
-
-
     mostrarCarrito();
     actualizarBadge(); // Llamar a la función para actualizar el badge al cargar la página
 
@@ -15,16 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const total = calcularTotal(carrito);
         totalAmount.textContent = formatearPrecio(total);
 
-
         if (carrito.length === 0) {
             // Modificar mensaje en que caso de que no hayan elementos agregados al carrito
-
             emptyMessage.style.borderRadius = '10px';
-            //emptyMessage.style.backgroundColor = 'rgba(128, 128, 128, 0.7)';
-            //emptyMessage.style.paddingTop = '3.3%';
             emptyMessage.style.display = 'block';
-            
-
             emptyMessage.style.fontWeight = 'bold';
             emptyMessage.innerHTML = `
                 <h1>🛒</h1>
@@ -47,9 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cantidadProductos === 0) {
             // Si la cantidad de productos es 0, oculta la insignia
             badgeElement.style.display = 'none';
-        }else {
-            // Si hay productos en el carrito, muestra la cantidad y la insignia
-            if (cantidadProductos > 9 ){
+        } else {
+            if (cantidadProductos > 9) {
                 badgeElement.textContent = '9+';
             } else {
                 badgeElement.textContent = cantidadProductos;
@@ -60,8 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Guardar la cantidad de productos en el carrito en localStorage
         localStorage.setItem('cantidadProductos', cantidadProductos);
     }
-        
-    
 
     // Función para formatear el precio en pesos chilenos (CLP)
     function formatearPrecio(precio) {
@@ -74,25 +63,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Función encargada de crear y modificar las cartas de los productos en el carrito
     function crearCardCarrito(item) {
+        console.log(item.foto); // Agregar esta línea para depuración
         const card = document.createElement('div');
         // Modificar cartas
         card.classList.add('card', 'mb-4');
 
         card.innerHTML = `
             <div class="card-body d-flex align-items-center">
-            
                 <!-- Imagen del producto a la izquierda -->
-                <img src="imagenes-productos/producto${item.id}.jpg" class="card-img-top me-3" alt="${item.nombre}" style="max-width: 80px;">
+                <img src="/media/${item.foto}" class="card-img-top me-3" alt="${item.nombre}" style="max-width: 80px;">
                 
                 <!-- Contenedor del contenido a la derecha -->
                 <div class="d-flex flex-column flex-grow-1">
-                    
                     <!-- Nombre del producto -->
                     <h5 class="card-title">${item.nombre}</h5>
-                    
                     <!-- Botón Eliminar -->
                     <button class="btn btn-danger btn-eliminar btn-sm mb-2 align-self-start" data-id="${item.id}">Eliminar</button>
-                    
                 </div>
                 <!-- Contenedor de Cantidad y Precio -->
                 <div class="d-flex justify-content-between align-items-center">
@@ -112,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     carritoContainer.addEventListener('click', event => {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado de los botones
+
         if (event.target.classList.contains('btn-incrementar')) {
             const id = event.target.dataset.id;
             incrementarCantidad(id);
@@ -131,13 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function incrementarCantidad(id) {
         let carrito = obtenerCarrito();
         const producto = carrito.find(item => item.id === id);
-        console.log('Producto antes de incrementar:', producto);
         producto.cantidad++;
-        console.log('Producto después de incrementar:', producto);
         localStorage.setItem('carrito', JSON.stringify(carrito));
-        console.log('Carrito actualizado:', carrito);
+        actualizarBadge(); // Llamar a la función para actualizar el badge
         mostrarCarrito();
-        actualizarBadge(carrito); // Llamar a la función para actualizar el badge
     }
 
     function decrementarCantidad(id) {
@@ -146,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (producto.cantidad > 1) {
             producto.cantidad--;
             localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarBadge(); // Llamar a la función para actualizar el badge
             mostrarCarrito();
-            actualizarBadge(carrito); // Llamar a la función para actualizar el badge
         }
     }
 
@@ -157,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (index !== -1) {
             carrito.splice(index, 1);
             localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarBadge(); // Llamar a la función para actualizar el badge
             mostrarCarrito();
-            actualizarBadge(carrito); // Llamar a la función para actualizar el badge
         }
     }
 

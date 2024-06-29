@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from .models import Producto
 
 # Create your views here.
 def index(request):
@@ -33,3 +35,8 @@ def wildebeest(request):
 
 def wilderdog(request):
     return render(request, 'wilderdog.html')
+
+def obtener_productos_populares(request):
+    productos_populares = Producto.objects.filter(producto_popular=True).values('id', 'nombre', 'precio', 'foto')
+    productos_list = list(productos_populares)
+    return JsonResponse(productos_list, safe=False)
