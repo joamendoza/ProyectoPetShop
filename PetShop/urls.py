@@ -40,6 +40,14 @@ urlpatterns = [
     path('bandanas/the-black-dog/', the_black_dog),
     path('bandanas/wildebeest/', wildebeest),
 
+    #Crud------------------------------------------------------------------------------
+    #Para ingresar, necesita primero loggearse con las credenciales de admin:admin en el panel de django.
+    path('producto/', views.producto_list, name='producto_list'),
+    path('producto/<int:pk>/', views.producto_detail, name='producto_detail'),
+    path('producto/new/', views.producto_create, name='producto_create'),
+    path('producto/<int:pk>/edit/', views.producto_update, name='producto_update'),
+    path('producto/<int:pk>/delete/', views.producto_delete, name='producto_delete'),
+
 
     path('api/productos_populares/', views.obtener_productos_populares, name='productos_populares'),
 

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">Productos</h1>
+<a href="{% url 'producto_create' %}" class="btn btn-primary mb-3">Crear nuevo producto</a>
+<ul class="list-group">
+    {% for producto in productos %}
+        <li class="list-group-item">
+            <a href="{% url 'producto_detail' producto.pk %}">{{ producto.nombre }}</a>
+            ({{ producto.get_tipo_producto_display }} - {{ producto.get_marca_display }})
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

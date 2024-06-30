@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}{% if form.instance.pk %}Editar{% else %}Crear{% endif %} Producto{% endblock %}
+
+{% block content %}
+<div class="container border border-2 p-4 d-flex justify-content-center align-items-center" style="margin-top: 100px;">
+    <div>
+        <h1 class="mt-5 text-center">{% if form.instance.pk %}Editar{% else %}Crear{% endif %} Producto</h1>
+        <form method="post" enctype="multipart/form-data" class="text-center mt-3">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="form-group mb-3">
+                {{ form.nombre.label_tag }}
+                {{ form.nombre }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.tipo_producto.label_tag }}
+                {{ form.tipo_producto }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.marca.label_tag }}
+                {{ form.marca }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.precio.label_tag }}
+                {{ form.precio }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.producto_popular.label_tag }}
+                {{ form.producto_popular }}
+            </div>
+            <div class="form-group mb-3">
+                {{ form.foto.label_tag }}
+                {{ form.foto }}
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary mx-2">{% if form.instance.pk %}Guardar{% else %}Crear{% endif %}</button>
+                <a href="{% url 'producto_list' %}" class="btn btn-secondary mx-2">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

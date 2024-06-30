@@ -1,0 +1,7 @@
+{% if widget.is_initial %}
+    <div class="text-center mt-2">
+        <img src="{{ widget.value.url }}" class="img-fluid img-max" alt="{{ widget.name }}" style="max-width: 200px;">
+        <div><a href="{{ widget.value.url }}" target="_blank">{{ widget.value.url }}</a></div>
+    </div>
+{% endif %}
+<input type="file" name="{{ widget.name }}" class="{{ widget.attrs.class }}">

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ producto.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container border border-2 p-4 d-flex justify-content-center align-items-center" style="margin-top: 100px;">
+    <div>
+        <div class="text-center">
+            <h1 class="mt-5">{{ producto.nombre }}</h1>
+        </div>
+        <p><strong>Tipo:</strong> {{ producto.get_tipo_producto_display }}</p>
+        <p><strong>Marca:</strong> {{ producto.get_marca_display }}</p>
+        <p><strong>Precio:</strong> {{ producto.precio }}</p>
+        <p><strong>Popular:</strong> {{ producto.producto_popular }}</p>
+        <div class="text-center">
+            <img src="{{ producto.foto.url }}" alt="{{ producto.nombre }}" class="img-fluid img-max">
+        </div>
+        <div class="text-center mt-3">
+            <a href="{% url 'producto_update' producto.pk %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'producto_delete' producto.pk %}" class="btn btn-danger">Eliminar</a>
+            <a href="{% url 'producto_list' %}" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
