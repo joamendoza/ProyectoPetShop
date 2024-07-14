@@ -30,6 +30,17 @@ urlpatterns = [
     path('carrito/', carrito),
     path('participa/', participa),
     path('ubicacion/', ubicacion),
+    path('perfil/', perfilUsuario, name='perfilUsuario'),
+    path('register/', register, name='register'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', logout_view, name='logout'),
+
+    #pagos
+    path('realizar_compra/', realizar_compra, name='realizar_compra'),
+
+    #Perfil de usuario
+    path('cambiar_foto_perfil/', cambiar_foto_perfil, name='cambiar_foto_perfil'),
+    path('ver_historial_compras/', ver_historial_compras, name='ver_historial_compras'),
 
     path('correas/', correas),
     path('correas/max-and-molly/', max_and_molly2),

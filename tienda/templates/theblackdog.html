@@ -125,9 +125,36 @@
             <div id="resultadosBusqueda" class="dropdown-menu" aria-labelledby="barraBusqueda"></div>      
           </form>                  
           <a id="botonCarrito" href="/carrito/" class="btn btn-outline-primary">
-            <span id="iconoCarrito"></span>
+            <span id="iconoCarrito">
+            </span>
             <span id="badge" class="badge rounded-pill bg-danger">0</span>
           </a>
+          <div id="perfilUsuarioDropdown" class="dropdown">
+            <a id="botonPerfilUsuario" href="#" class="badge d-flex align-items-center p-1 pe-2 rounded-pill dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              {% if request.user.profile.profile_image %}
+                  <img class="rounded-circle me-1" src="{{ request.user.profile.profile_image.url }}" alt="Foto de perfil de {{ request.user.username }}">
+              {% else %}
+                  <img class="rounded-circle me-1" src="{% static 'imagenes/iconos/usuario.png'%}" alt="Icono de usuario">
+              {% endif %}
+              {% if request.user.username %}
+              {{ request.user.username }}
+              {% else %}
+              ¡Hola!
+              {% endif %}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="botonPerfilUsuario">
+                {% if user.is_authenticated %}
+                  {% if user.is_superuser %}
+                    <li><a class="dropdown-item" href="{% url 'producto_list' %}">Productos</a></li>
+                  {% endif %}
+                <li><a class="dropdown-item" href="{% url 'perfilUsuario' %}">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li><a class="dropdown-item" href="{% url 'register' %}">Registrarse</a></li>
+                {% endif %}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

@@ -5,6 +5,7 @@
 {% block content %}
 <h1 class="mt-5">Productos</h1>
 <a href="{% url 'producto_create' %}" class="btn btn-primary mb-3">Crear nuevo producto</a>
+<a href="{% url 'index' %}" class="btn btn-secondary mb-3">Volver a la página principal</a>
 <ul class="list-group">
     {% for producto in productos %}
         <li class="list-group-item">

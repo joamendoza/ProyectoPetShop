@@ -237,6 +237,34 @@ main {
   padding: 0;
 }
 
+
+
+/*--- Botón del perfil de usuario ---*/
+#botonPerfilUsuario{
+  color: var(--colorTexto-navBar);
+  border-radius: 50rem;
+  text-decoration: none; /* Añadir esta línea para quitar el subrayado */
+}
+
+#botonPerfilUsuario:hover {
+    background-color: var(--colorHover-bgBtnCarrito);
+    color: black;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#botonPerfilUsuario img {
+  border: 1px solid white;
+  width: auto;
+  height: 32px;
+  object-fit: cover;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+#botonPerfilUsuario:hover img {
+  border: 1px solid black;
+}
+
 /*--- De aquí para abajo solo Dios sabe lol ---*/
 #containerParametros{
   max-width: 80%;
@@ -307,3 +335,114 @@ main {
   background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns%3d%27http://www.w3.org/2000/svg%27 fill%3d%27%23fff%27 viewBox%3d%270 0 8 8%27%3e%3cpath d%3d%27M3.5 0L2.5 1l3.5 3-3.5 3 1 1L8 4 3.5 0z%27/%3e%3c/svg%3e');
 }
 
+/* CSS para el registro de usuario */
+
+#containerRegistro{
+  max-width: 40%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #146FB8;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 1%;
+  color: lightgray;
+  border-color: #0B2447;
+  border-width: 1px;
+  box-shadow: #31363F 0px 2px 4px;;
+}
+
+#containerRegistro button{
+  border-color: rgba(8, 44, 74,1);
+  background-color: rgba(8, 44, 74,1);
+  box-shadow: #31363F 0px 2px 4px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#containerRegistro button:hover{
+  color: black;
+  background-color: #198754;
+  box-shadow: #31363F 0px 2px 4px;
+}
+
+#containerRegistro a{
+  border-color: rgba(8, 44, 74,1);
+  background-color: rgba(8, 44, 74,1);
+  box-shadow: #31363F 0px 2px 4px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#containerRegistro a:hover{
+  color: black;
+  background-color: rgba(161, 197, 227, 0.671);
+  box-shadow: #31363F 0px 2px 4px;
+}
+
+#containerRegistro #botonRegistroCancelar:hover{
+  color: black;
+  background-color: #dc3545;
+  box-shadow: #31363F 0px 2px 4px;
+}
+
+/* CSS para el inicio de sesión */
+
+.login-container{
+  max-width: 40%;
+  margin: auto;
+  background-color: #146FB8;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 1%;
+  color: lightgray;
+  border-color: #0B2447;
+  border-width: 1px;
+  box-shadow: #31363F 0px 2px 4px;;
+}
+
+.login-container button{
+  border-color: rgba(8, 44, 74,1);
+  background-color: rgba(8, 44, 74,1);
+  box-shadow: #31363F 0px 2px 4px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.login-container button:hover{
+  color: black;
+  background-color: #198754;
+  box-shadow: #31363F 0px 2px 4px;
+}
+
+.login-container a{
+  border-color: rgba(8, 44, 74,1);
+  background-color: rgba(8, 44, 74,1);
+  box-shadow: #31363F 0px 2px 4px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.login-container a:hover{
+  color: black;
+  
+  background-color: rgba(161, 197, 227, 0.671);
+  box-shadow: #31363F 0px 2px 4px;
+}
+
+.login-container #botonInicioCancelar:hover{
+  color: black;
+  background-color: #dc3545;
+  box-shadow: #31363F 0px 2px 4px;
+}
+
+#fondoPerfil{
+  max-width: 60%;
+}
+
+#perfilUsuarioDropdown .dropdown-menu {
+  left: 50%;
+  transform: translateX(-60%);
+  margin: auto;
+}
+
+@media (max-width: 992px) {
+  #fondoPerfil{
+    max-width: 80%;
+  }
+}
