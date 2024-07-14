@@ -147,8 +147,8 @@
                   {% if user.is_superuser %}
                     <li><a class="dropdown-item" href="{% url 'producto_list' %}">Productos</a></li>
                   {% endif %}
-                <li><a class="dropdown-item" href="{% url 'perfilUsuario' %}">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                <li><a id="botonMiPerfil" class="dropdown-item" href="{% url 'perfilUsuario' %}">Mi perfil</a></li>
+                <li><a id="botonLogout" class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
                 <li><a class="dropdown-item" href="{% url 'register' %}">Registrarse</a></li>

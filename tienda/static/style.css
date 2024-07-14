@@ -420,7 +420,6 @@ main {
 
 .login-container a:hover{
   color: black;
-  
   background-color: rgba(161, 197, 227, 0.671);
   box-shadow: #31363F 0px 2px 4px;
 }
@@ -435,10 +434,36 @@ main {
   max-width: 60%;
 }
 
+#perfilUsuarioDropdown {
+  margin-left: 0.5%;
+}
+
 #perfilUsuarioDropdown .dropdown-menu {
   left: 50%;
-  transform: translateX(-60%);
-  margin: auto;
+  transform: translateX(-70%);
+  text-align: center;
+  max-width: fit-content;
+  padding: 0%;
+}
+
+#perfilUsuarioDropdown .dropdown-menu #botonMiPerfil:hover{
+  background-color: #0B2447;
+  color: lightgray;
+  border-radius: 5px 5px 0 0;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#perfilUsuarioDropdown .dropdown-menu #botonLogout:hover{
+  background-color: #dc3545;
+  border-radius: 0 0 5px 5px;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+#perfilUsuarioDropdown .dropdown-menu #botonInicio:hover{
+  background-color: #0B2447;
+  color: lightgray;
+  border-radius: 5px 5px 0 0;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
 @media (max-width: 992px) {

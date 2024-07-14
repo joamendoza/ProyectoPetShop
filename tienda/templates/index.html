@@ -146,8 +146,8 @@
                   {% if user.is_superuser %}
                     <li><a class="dropdown-item" href="{% url 'producto_list' %}">Productos</a></li>
                   {% endif %}
-                <li><a class="dropdown-item" href="{% url 'perfilUsuario' %}">Mi perfil</a></li>
-                <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                <li><a id="botonMiPerfil" class="dropdown-item" href="{% url 'perfilUsuario' %}">Mi perfil</a></li>
+                <li><a id="botonLogout" class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
                 <li><a class="dropdown-item" href="{% url 'register' %}">Registrarse</a></li>
@@ -290,7 +290,6 @@
   <!-- importaciones de código -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

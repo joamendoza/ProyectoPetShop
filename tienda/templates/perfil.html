@@ -137,8 +137,8 @@
               {{ request.user.username }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="botonPerfilUsuario">
-                <li><a class="dropdown-item" href="{% url 'index' %}">Inicio</a></li>
-                <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+                <li><a id="botonInicio" class="dropdown-item" href="{% url 'index' %}">Inicio</a></li>
+                <li><a id="botonLogout" class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
             </ul>
           </div>
         </div>
