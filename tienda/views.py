@@ -22,6 +22,7 @@ def correas(request):
 def carrito(request):
     return render(request, 'carrito.html')
 
+@login_required(login_url='login')
 def perfilUsuario(request):
     return render(request, 'perfil.html')
 
@@ -150,6 +151,7 @@ def register(request):
             if 'profile_picture' in request.FILES:
                 profile.profile_image = request.FILES['profile_picture']
             profile.save()
+            login(request, user)
             return redirect('index')
     else:
         form = UserRegistrationForm()
@@ -166,6 +168,7 @@ class CustomLoginView(LoginView):
         return redirect(next_url)
 
 #cerrar sesion
+@login_required
 def logout_view(request):
     logout(request)
     return redirect('index')
