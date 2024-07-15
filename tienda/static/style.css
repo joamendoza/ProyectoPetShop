@@ -351,6 +351,12 @@ main {
   box-shadow: #31363F 0px 2px 4px;;
 }
 
+@media (max-width: 767px) {
+  #containerRegistro {
+    max-width: 80%;
+  }
+}
+
 #containerRegistro button{
   border-color: rgba(8, 44, 74,1);
   background-color: rgba(8, 44, 74,1);
@@ -396,6 +402,15 @@ main {
   border-color: #0B2447;
   border-width: 1px;
   box-shadow: #31363F 0px 2px 4px;;
+}
+
+@media (max-width: 767px) {
+  .login-container {
+    max-width: 90%;
+  }
+  #botonInicioCancelar{
+    margin-top: 2%;
+  }
 }
 
 .login-container button{
